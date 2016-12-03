@@ -1,0 +1,26 @@
+body{
+
+}
+
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+	width: 1000px;
+	.center-block();
+	text-align: center;
+	margin-top: 50px;
+	border: solid 2px black;
+}
+
+.battle{
+	border:solid 2px black;
+}
+
+.avatars{
+	margin-top:15px;
+	margin-bottom:15px;
+}
