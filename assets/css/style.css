@@ -24,3 +24,42 @@ body{
 	margin-top:15px;
 	margin-bottom:15px;
 }
+
+.col-md-5{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+.attackButton{
+	vertical-align: middle;
+}
+
+.progress{
+	width:150px;
+	margin-top:5px;
+	margin-left:115px;
+}
+
+.btn{
+	margin-top:50px;
+}
+
+#playerOne{
+	border:solid 2px black;
+}
+
+#playerTwo{
+	border:solid 2px black;
+}
+
+#playerAvatar{
+	border:solid 2px black;
+}
+
+.attackButton{
+	vertical-align: middle;
+}
+
+#defenderHealth{
+	background-image: black;
+}
