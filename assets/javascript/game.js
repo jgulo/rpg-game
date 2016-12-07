@@ -9,68 +9,95 @@ $("#morriganImg").data({"name":"Morrigan Aensland", "lifepoints":100, "attackpow
 
 pOneHealth = 100;
 pTwoHealth = 100;
+var attackCounter = 1;
+
 firstPlayerSelected = false;
+secondPlayerSelected = false;
 
 
 
 
 
 $(".avatarRow").click(function(){
+	if (($("#playerTwo").find('img').length)){
+		$("#gameFooter").html("Finish your battle!")
+	} else {
+		if(firstPlayerSelected === false){
+			var playerOne = $(this).attr('id');
+			var playerOneImgID = $(this).children('img').attr('id');
+			var playerOneSrc = $(this).children('img').attr('src');
+			$($('#' + playerOne).contents()).appendTo('#playerOne')
+			$('#playerOne').append('<div class="progress"> <div class="progress-bar" id="attackerHealth" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> '+ pOneHealth + "%" +' </div> </div>')
+	       	
+			firstPlayerSelected = true;
 
-	if(firstPlayerSelected === false){
-		var playerOne = $(this).attr('id');
-		var playerOneImgID = $(this).children('img').attr('id');
-		var playerOneSrc = $(this).children('img').attr('src');
-		$($('#' + playerOne).contents()).appendTo('#playerOne')
-		$('#playerOne').append('<div class="progress"> <div class="progress-bar" id="attackerHealth" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> '+ pOneHealth + "%" +' </div> </div>')
-       	//$("#" + playerOne).empty();
-		//$('#playerOne').append('<img id="' + playerOneImgID + '" src="' + playerOneSrc + '" /> <div class="progress"> <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 100% </div> </div>');
-		firstPlayerSelected = true;
-		console.log(playerOne)
-	} else{
-		var playerTwo = $(this).attr('id');
-		var playerTwoImgID = $(this).children('img').attr('id');
-		var playerTwoSrc = $(this).children('img').attr('src');
+			$("#gameFooter").html("Choose your Opponent!")
+			console.log(playerOne)
+		} else if (secondPlayerSelected== false){
+			var playerTwo = $(this).attr('id');
+			var playerTwoImgID = $(this).children('img').attr('id');
+			var playerTwoSrc = $(this).children('img').attr('src');
 
-		$($('#' + playerTwo).contents()).appendTo('#playerTwo')
-		$('#playerTwo').append('<div class="progress"> <div class="progress-bar" id="defenderHealth" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> '+ pOneHealth + "%" +' </div> </div>')
-       	//$("#" + playerTwo).empty();
-		//$('#playerTwo').append('<img id="' + playerTwoImgID + '" src="' + playerTwoSrc + '" /> <div class="progress"> <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 100% </div> </div>');
-		console.log(playerTwo)
-		
-	}  
+			$($('#' + playerTwo).contents()).appendTo('#playerTwo')
+			$('#playerTwo').append('<div class="progress"> <div class="progress-bar" id="defenderHealth" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> '+ pTwoHealth + "%" +' </div> </div>')
+	       	
+			secondPlayerSelected = true;
+			$("#gameFooter").html("Attack!")
+			console.log(playerTwo)
+		}  
+	}
 });
 
 
 
 $(".attackButton").click(function(){
+	
+	function checkifGameWinner(){
+		if (((($("#cyclops").find('img').length))==false)&&(($("#wolverine").find('img').length)==false)&&(($("#megaman").find('img').length)==false)&&(($("#ryu").find('img').length)==false)&&(($("#morrigan").find('img').length)==false)){
+			$("#gameFooter").html("You won the game!")
 
-	function checkIfWinner(){
+		}
+	}
+
+	function checkIfRoundWinner(){
 		if (pTwoHealth<0){
-			alert("you win")
+			
 	  		$("#playerTwo").empty();
 	  		$("#playerTwo").append("<h1>Defender</h1>")
-	  		alert("chose next opponent")
+	  		$("#gameFooter").html("Choose your next opponent!")
 	  		
 	  		pTwoHealth = 100;
 	  		pOneHealth = 100;
+	  		attackCounter = 1;
 
 	  		$("#attackerHealth").css("width", pOneHealth +"%")
 			$("#defenderHealth").css("width", pTwoHealth +"%")
+
+			$("#attackerHealth").html(pOneHealth + "%")
+			$("#defenderHealth").html(pTwoHealth + "%")
+			secondPlayerSelected = false;
 		}
 	}
+
+	
 
 	if(($("#playerOne").find('img').length)&&($("#playerTwo").find('img').length)){
 		var attackerPower = $("#playerOne").children('img').data("attackpower");
 		var defenderPower = $("#playerTwo").children('img').data("counterattack");
-
+		
 		
 		pOneHealth = pOneHealth - defenderPower;
-		pTwoHealth = pTwoHealth - attackerPower;
+		pTwoHealth = pTwoHealth - (attackerPower*attackCounter);
 		$("#attackerHealth").css("width", pOneHealth +"%")
 		$("#defenderHealth").css("width", pTwoHealth +"%")
 
-		checkIfWinner();
+		$("#attackerHealth").html(pOneHealth + "%")
+		$("#defenderHealth").html(pTwoHealth + "%")
+
+		attackCounter++;
+		console.log(attackCounter)
+		checkifGameWinner();
+		checkIfRoundWinner();
 
 	} else if (($("#playerTwo").find('img').length)==false){
 		alert("Select your opponent first!")
@@ -80,13 +107,6 @@ $(".attackButton").click(function(){
     
 		
 });
-
-
-
-
-
-
-
 
 
 });
