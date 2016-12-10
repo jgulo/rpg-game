@@ -35,12 +35,15 @@ $(".avatarRow").click(function(){
 		var playerOne = $(this).attr('id');
 		var playerOneImgID = $(this).children('img').attr('id');
 		$("#attackerPosition").html('<img class="battleAvatar" id="'+playerOneImgID+'" src="assets/images/' + playerOneImgID + '.png" alt='+playerOneImgID+'>');
+		$("#progressLeft").html('<div class="progress attackerProgress"><div class="progress-bar" id="attackerHealth" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only" id="attackerAmt">100%</span></div></div>')
+		$(".playerOne").html(playerOneImgID)
+		
+
 		firstPlayerSelected = true;
 
 		$("#" + playerOne).css("opacity",".25")
 		console.log(playerOne)
 
-		//$("#gameFooter").html("Choose your Opponent!")
 			
 	} else if (secondPlayerSelected === false){
 		var playerTwo = $(this).attr('id');
@@ -48,12 +51,13 @@ $(".avatarRow").click(function(){
 		
 		var playerTwoImgID = $(this).children('img').attr('id');
 		$("#defenderPosition").html('<img class="battleAvatar" id="'+playerTwoImgID+'" src="assets/images/' + playerTwoImgID + '.png" alt='+playerTwoImgID+'>');
+		$("#progressRight").html('<div class="progress defenderProgress"><div class="progress-bar" id="defenderHealth" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only" id="defenderAmt">100%</span></div></div>')
+		$(".playerTwo").html(playerTwoImgID)
 
 		secondPlayerSelected = true;
 		$("#" + playerTwo).css("opacity",".25")
 		$("#defenderAmt").html(pTwoHealth + "%")
 		$("#defenderHealth").css("width", pTwoHealth +"%")
-					//$("#gameFooter").html("Attack!")
 		}  
 
 	
@@ -68,9 +72,9 @@ $(".attackButton").click(function(){
 	function checkifGameWinner(){
 		if ((($("#defenderPosition").find('img').length)==0)&&(($("#novaImg").css('opacity'))==.25)&&(($("#wolverineImg").css('opacity'))==.25)&&(($("#spidermanImg").css('opacity'))==.25)&&(($("#zeroImg").css('opacity'))==.25)&&(($("#morriganImg").css('opacity'))==.25)&&(($("#ironfistImg").css('opacity'))==.25)&&(($("#joeImg").css('opacity'))==.25)&&(($("#chunliImg").css('opacity'))==.25)){
 			$("#progressRight").empty();
-			setTimeout(function(){
-				alert("youwin")
-			},500)
+			$(".playerTwo").html("You Win!")
+
+			
 		} 
 	}
 	
@@ -79,6 +83,8 @@ $(".attackButton").click(function(){
 		if (pTwoHealth<0){
 			
 	  		$("#defenderPosition").empty();
+	  		$("#progressRight").empty();
+	  		$(".playerTwo").html("Select Your Opponent")
 	  		
 	  		//$("#gameFooter").html("Choose your next opponent!")
 	  		if ((($("#novaImg").css('opacity'))==.25)&&(($("#wolverineImg").css('opacity'))==.25)&&(($("#spidermanImg").css('opacity'))==.25)&&(($("#zeroImg").css('opacity'))==.25)&&(($("#morriganImg").css('opacity'))==.25)&&(($("#ironfistImg").css('opacity'))==.25)&&(($("#joeImg").css('opacity'))==.25)&&(($("#chunliImg").css('opacity'))==.25)){

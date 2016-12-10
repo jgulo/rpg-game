@@ -26,7 +26,7 @@ body{
 
 .avatarContainer{
 	padding:5px;
-	height:400px;
+	height:405px;
 	background-color:gray;
 	margin-top:10%;
 	
@@ -74,8 +74,19 @@ body{
 	text-align:center;
 }
 
+h1{
+	font-family:'Bungee Shade';
+	color:white;
+}
+
+.names{
+	font-family:'Bungee';
+	color:white;
+	font-size:175%;
+	margin-top:10px;
+}
 .progress{
-	margin-top:30px;
+	margin-top:5px;
 }
 
 .battle{
@@ -112,9 +123,9 @@ body{
 .attackerProgress{
 	width:250px;
 	margin-left:-20px;
-	-webkit-transform: skew(-20deg);
-	-moz-transform: skew(20deg);
-	-o-transform: skew(20deg);
+	-webkit-transform: skew(20deg);
+	-moz-transform: skew(-20deg);
+	-o-transform: skew(-20deg);
 	background: red;
 	float:top;
 }
@@ -127,81 +138,4 @@ body{
 	-o-transform: skew(20deg);
 	background: red;
 	float:top;
-}
-/*
-.header{
-	height:75px;
-	outline:solid 2px black;
-	background-color:gray;
-}
-
-
-/*
-h1 {
-    color: red;
-    text-shadow: -2px 0 yellow, 0 2px yellow, 4px 0 yellow, 0 2px yellow;
-}
-
-
-
-
-
-/*
-.avatars{
-	margin-top:15px;
-	margin-bottom:15px;
-}
-
-.col-md-5{
-	padding-top:15px;
-	padding-bottom:15px;
-}
-
-.attackButton{
-	vertical-align: middle;
-}
-
-.progress-attacker{
-	width:150px;
-	margin-top:5px;
-	margin-left:115px;
-	-webkit-transform: skew(-20deg);
-	-moz-transform: skew(20deg);
-	-o-transform: skew(20deg);
-	background: red;
-	float:top;
-}
-
-.progress-defender{
-	width:150px;
-	margin-top:5px;
-	margin-left:115px;
-	-webkit-transform: skew(20deg);
-	-moz-transform: skew(20deg);
-	-o-transform: skew(20deg);
-	background: red;
-}
-
-
-
-.btn{
-	margin-top:50px;
-}
-
-#playerOne{
-}
-
-#playerTwo{
-}
-
-#playerAvatar{
-	border:solid 2px black;
-}
-
-.attackButton{
-	vertical-align: middle;
-}
-
-#defenderHealth{
-	background-image: black;
 }
