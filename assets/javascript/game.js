@@ -8,7 +8,7 @@ $("#spiderman").data({"name":"Spider Man", "lifepoints":100, "attackpower":9,"co
 $("#morrigan").data({"name":"Morrigan Aensland", "lifepoints":100, "attackpower":8,"counterattack":10})
 $("#zero").data({"name":"Zero", "lifepoints":100, "attackpower":12,"counterattack":10})
 $("#ironfist").data({"name":"Iron Fist", "lifepoints":100, "attackpower":13,"counterattack":11})
-
+ 
 
 
 pOneHealth = 100;
