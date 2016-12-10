@@ -1,0 +1,101 @@
+body{
+	background-color:black;
+
+}
+
+.center-block() {
+ 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatarContainer{
+	margin-top:25px;
+	margin-left:25px;
+	height:500px;
+	width:150px;
+	border:solid 2px white;
+	display:inline-block;
+}
+
+.container {
+	width: 800px;
+	.center-block();
+	text-align: center;
+	margin-top: 0px;
+	border: solid 2px white;
+	height:800px;
+	clear:both;
+	display:inline-block;
+
+
+}
+
+.battle{
+	background-image: url("../images/stage.jpg");
+	width:100%;
+	background-size:cover;
+	height:500px;
+
+	box-sizing:border-box;
+    min-width:250px;
+    min-height:250px;
+    display:inline-block;
+}
+
+.avatars{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.col-md-5{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+.attackButton{
+	vertical-align: middle;
+}
+
+.progress-attacker{
+	width:250px;
+	
+	-webkit-transform: skew(-20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: red;
+	float:top;
+}
+
+.progress-defender{
+	width:250px;
+	margin-right:20px;
+	-webkit-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: red;
+}
+
+
+
+.btn{
+	margin-top:50px;
+}
+
+#playerOne{
+}
+
+#playerTwo{
+}
+
+#playerAvatar{
+	border:solid 2px black;
+}
+
+.attackButton{
+	vertical-align: middle;
+}
+
+#defenderHealth{
+	background-image: black;
+}

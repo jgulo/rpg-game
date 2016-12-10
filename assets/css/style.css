@@ -1,25 +1,152 @@
 body{
+	background: url("../images/bodybackground.jpg") no-repeat center center fixed; 
+ 	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container{
+
+	width:1000px;
+	height:600px;
+	padding-left:0;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row{
+	margin:0;
+	position:relative;
+	width:100%;
 
 }
 
-.center-block() {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.avatarContainer{
+	padding:5px;
+	height:400px;
+	background-color:gray;
+	margin-top:10%;
+	
+	text-align:center;
+	font-family: 'Bungee';
+	font-size:150%;
 }
 
-.container {
-	width: 1000px;
-	.center-block();
-	text-align: center;
-	margin-top: 50px;
-	border: solid 2px black;
+.text{
+	border:solid 2px black;
+	width:100%;
+	position:relative;
+	background-color:white;
+
+}
+
+.selectCharacter{
+	margin-top:15px;
+	text-align: left;
+
+	
+
+}
+
+.avatarImg{
+	outline:solid 2px black;
+}
+
+.right{
+	float:right;
+}
+
+.avatarRow{
+	border:solid 2px white;
+	padding-left:0;
+	padding-right:0;
+}
+
+
+
+
+.mainContainer{
+	height:596px;
+	padding-left:20px;
+	text-align:center;
+}
+
+.progress{
+	margin-top:30px;
 }
 
 .battle{
-	border:solid 2px black;
+	background-image: url("../images/stage.jpg") ;
+	
+   float:center;
+   width:752px;
+   height:466px;
+   display: block;
+    margin: auto;
 }
 
+.attackerPosition{
+	height:350px;
+	width:250px;
+	margin-left:65px;
+	margin-top:30px;
+
+}
+
+.defenderPosition{
+	height:350px;
+	width:250px;
+	margin-top:30px;
+	
+}
+
+.battleAvatar{
+	max-width: 250px;
+ 	max-height: 350px;
+
+}
+
+.attackerProgress{
+	width:250px;
+	margin-left:-20px;
+	-webkit-transform: skew(-20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: red;
+	float:top;
+}
+
+.defenderProgress{
+	width:250px;
+	
+	-webkit-transform: skew(-20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: red;
+	float:top;
+}
+/*
+.header{
+	height:75px;
+	outline:solid 2px black;
+	background-color:gray;
+}
+
+
+/*
+h1 {
+    color: red;
+    text-shadow: -2px 0 yellow, 0 2px yellow, 4px 0 yellow, 0 2px yellow;
+}
+
+
+
+
+
+/*
 .avatars{
 	margin-top:15px;
 	margin-bottom:15px;
@@ -34,22 +161,37 @@ body{
 	vertical-align: middle;
 }
 
-.progress{
+.progress-attacker{
 	width:150px;
 	margin-top:5px;
 	margin-left:115px;
+	-webkit-transform: skew(-20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: red;
+	float:top;
 }
+
+.progress-defender{
+	width:150px;
+	margin-top:5px;
+	margin-left:115px;
+	-webkit-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: red;
+}
+
+
 
 .btn{
 	margin-top:50px;
 }
 
 #playerOne{
-	border:solid 2px black;
 }
 
 #playerTwo{
-	border:solid 2px black;
 }
 
 #playerAvatar{
